@@ -1,5 +1,14 @@
-<ul>
+<h1>My Tasks</h1>
+<ul class="list-group" style= "list-style-type: none">
   <% @tasks.each do |task| %>
-    <li><%= task.title %>: <%= task.details %></li>
-  <% end  %>
+    <div>
+      <li>
+      <input type="checkbox">
+      <%= link_to task.title, task_path(task) %>
+
+      </li>
+      <% end  %>
+    </div>
 </ul>
+
+<%= link_to "+ Add new task", new_task_path, class: "btn btn-primary" %>
